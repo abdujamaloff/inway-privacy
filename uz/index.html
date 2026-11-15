@@ -24,50 +24,65 @@
 <li>Pochta manzili: <span class="todo">[KIRITILMAGAN — do'kon talab qilsa tasdiqlansin]</span></li>
 </ul>
 
-<h2>2. Qanday ma'lumotlar yig'iladi va nima uchun</h2>
+<h2>2. Hisobsiz foydalanish</h2>
+<p>InWay'dan foydalanish uchun hisob yaratish yoki telefon raqamingizni berish shart emas. Xarita, GPS, navigatsiya, radar ogohlantirishlari, yaqin joylar va AI yordamchi tizimga kirmasdan ishlaydi.</p>
+<p>Telefon raqami orqali kirish ixtiyoriy. Smart Memory kabi ba'zi funksiyalar hisob talab qiladi. AI yordamchi hozircha bepul; kelajakda pulli AI funksiyalari joriy etilsa, bu siyosat ular boshlanishidan oldin yangilanadi.</p>
+
+<h2>3. Qanday ma'lumotlar yig'iladi va nima uchun</h2>
 <table>
 <tr><th>Ma'lumot</th><th>Qachon</th><th>Maqsad</th></tr>
-<tr><td>Telefon raqami</td><td>Kirishda</td><td>Hisob va SMS orqali bir martalik kod. Hash ko'rinishida saqlanadi.</td></tr>
+<tr><td>Anonim o'rnatish tokeni</td><td>Ilovani birinchi marta ishlatganda</td><td>Serverimiz yaratadigan tasodifiy qiymat. Serverda faqat uning xeshi saqlanadi. Kunlik AI so'rov chegarasini (kuniga 20 ta) qo'llash va xizmatni himoya qilish uchun ishlatiladi. Siz kirmagan bo'lsangiz, telefon raqamiga bog'lanmaydi.</td></tr>
 <tr><td>Aniq joylashuv (GPS)</td><td>Faqat ruxsat berilganda; xarita, navigatsiya, yaqin joylar va radar ogohlantirishlari uchun</td><td>Marshrut, yaqin joylar, radar ogohlantirishi. Xarita ma'lumotini olish uchun serverimizga yuboriladi.</td></tr>
 <tr><td>Mikrofon ovozi</td><td>Faqat ovoz tugmasini bosganingizda</td><td>Ovozli buyruqlar. Androidda tanib olish qurilmada (oflayn Vosk) bajariladi. Boshqa platformalarda audio server orqali matnga aylantirilishi mumkin.</td></tr>
-<tr><td>Chat xabarlari</td><td>AI yordamchiga yozganingizda</td><td>Javob tayyorlash. Serverimiz orqali OpenAI'ga yuboriladi (4-bo'lim).</td></tr>
-<tr><td>Qidiruv so'rovlari</td><td>Joy yoki musiqa qidirganingizda</td><td>Xarita va musiqa qidiruvi. Serverimiz orqali xizmatlarga yuboriladi.</td></tr>
-<tr><td>Sessiya tokenlari</td><td>Kirgandan keyin</td><td>Tizimda qolish. Android xavfsiz saqlashda saqlanadi.</td></tr>
+<tr><td>Ob-havo ma'lumoti</td><td>Ob-havo ekrani yoki bosh sahifadagi ob-havo kartasini ochganda</td><td>Joylashuvingiz uchun joriy ob-havo va prognoz. Koordinatalaringiz telefondan to'g'ridan-to'g'ri Open-Meteo'ga (api.open-meteo.com) yuboriladi, serverimiz orqali emas.</td></tr>
+<tr><td>Qurilma heartbeat</td><td>Ilova ishlayotganda vaqti-vaqti bilan</td><td>Tasodifiy qurilma identifikatori, ilova versiyasi va qurilma turi. Ilova holatini va masofaviy sozlamalarni tekshirish uchun serverimizga yuboriladi.</td></tr>
+<tr><td>Chat xabarlari</td><td>AI yordamchiga yozganingizda</td><td>Javob tayyorlash. Serverimiz orqali OpenAI'ga yuboriladi (5-bo'lim). Serverimiz xabar matnini operatsion loglarga yozmaydi.</td></tr>
+<tr><td>Qidiruv so'rovlari</td><td>Joy yoki musiqa qidirganingizda</td><td>Xarita va musiqa qidiruvi. Serverimiz orqali xizmatlarga yuboriladi. Serverimiz qidiruv matnini operatsion loglarga yozmaydi.</td></tr>
+<tr><td>Telefon raqami va kirish ma'lumoti (ixtiyoriy)</td><td>Faqat kirishni tanlasangiz</td><td>Hisob va SMS orqali bir martalik kod. Telefon raqami hash ko'rinishida saqlanadi.</td></tr>
+<tr><td>Sessiya tokenlari (ixtiyoriy kirish)</td><td>Kirgandan keyin</td><td>Tizimda qolish. Android xavfsiz saqlashda saqlanadi.</td></tr>
 <tr><td>Sevimlilar, tarix, pleylistlar</td><td>Siz saqlaganingizda</td><td>Faqat qurilmangizda saqlanadi.</td></tr>
-<tr><td>Smart Memory yozuvlari va qurilma ID</td><td>Faqat Smart Memory yoqilganda (standart: o'chiq)</td><td>Shaxsiy eslatmalar, assistent eslab qoladi.</td></tr>
+<tr><td>Smart Memory yozuvlari</td><td>Faqat kirib, Smart Memory'ni yoqsangiz (standart: o'chiq)</td><td>Shaxsiy eslatmalar, assistent eslab qoladi.</td></tr>
 </table>
 <p>Ilovada reklama identifikatorlari, uchinchi tomon analitikasi yoki xato yig'uvchi SDK yo'q. To'lov ma'lumotlari yig'ilmaydi.</p>
 
-<h2>3. Mikrofon va ovoz</h2>
-<p>Ovoz faqat ovoz tugmasini bosib turganingizda yoziladi. Androidda o'zbekcha tanib olish qurilmangizda bajariladi. Javoblar ilova ichidagi oldindan yozilgan klip orqali eshittiriladi; klip bo'lmasa, matn ovoz yaratish uchun serverimizga yuboriladi (4-bo'lim).</p>
+<h2>4. Mikrofon va ovoz</h2>
+<p>Ovoz faqat ovoz tugmasini bosib turganingizda yoziladi. Androidda o'zbekcha tanib olish qurilmangizda bajariladi. Javoblar ilova ichidagi oldindan yozilgan klip orqali eshittiriladi; klip bo'lmasa, matn ovoz yaratish uchun serverimizga yuboriladi (5-bo'lim).</p>
 
-<h2>4. Ma'lumotlarni kim oladi (qayta ishlovchilar)</h2>
+<h2>5. Ma'lumotlarni kim oladi (qayta ishlovchilar)</h2>
 <table>
 <tr><th>Qabul qiluvchi</th><th>Nima yuboriladi</th></tr>
-<tr><td>InWay serveri (bizning backend)</td><td>Hisob ma'lumoti, joylashuv va qidiruv so'rovlari, chat matni, ovoz yaratish uchun matn, server orqali tanib olish ishlatiladigan platformalarda audio.</td></tr>
-<tr><td>OpenAI</td><td>AI javobi uchun chat matni. OpenAI'ning o'z ma'lumot siyosati amal qiladi <span class="todo">[saqlash sozlamalari — TASDIQLANSIN]</span>.</td></tr>
+<tr><td>InWay serveri (bizning backend)</td><td>Anonim o'rnatish tokeni, joylashuv va qidiruv so'rovlari, chat matni, ovoz yaratish uchun matn, server orqali tanib olish ishlatiladigan platformalarda audio. Hisob ma'lumoti faqat kirsangiz.</td></tr>
+<tr><td>OpenAI</td><td>AI javobi uchun chat matni. OpenAI'ning o'z ma'lumot siyosati amal qiladi <span class="todo">[API ishlatilishi uchun saqlash sozlamalari — TASDIQLANSIN]</span>.</td></tr>
 <tr><td>OpenStreetMap Nominatim, OSRM marshrut xizmati va Overpass API</td><td>Joy qidiruvi matni va koordinatalar, marshrut nuqtalari, yaqin joy so'rovlari. Server yuboradi.</td></tr>
+<tr><td>Open-Meteo</td><td>Joylashuvingiz koordinatalari, ob-havo olish uchun. Telefondan to'g'ridan-to'g'ri yuboriladi.</td></tr>
+<tr><td>O'zbekiston Markaziy banki (cbu.uz)</td><td>Valyuta kursi sahifasiga so'rov. So'rovda shaxsiy ma'lumot yo'q, lekin sayt IP manzilingizni ko'radi. Telefondan to'g'ridan-to'g'ri yuboriladi.</td></tr>
+<tr><td>Google / YouTube</td><td>Musiqa uchun video rasmlari va o'rnatilgan pleyer YouTube'dan to'g'ridan-to'g'ri yuklanadi. Pleyer ichida IP manzilingiz va YouTube'ning o'z cookie'lari qo'llaniladi. <span class="todo">[YouTube shartlari bilan TASDIQLANSIN]</span></td></tr>
 <tr><td>YouTube Data API (Google)</td><td>Musiqa qidiruvi matni. Server yuboradi.</td></tr>
 </table>
 <p>Ma'lumotlarimizni sotmaymiz va reklama yoki profil tuzish uchun ulashmaymiz. Yuqoridagi qayta ishlovchilar bilan ma'lumot faqat siz ishlatayotgan funksiyalarni ta'minlash uchun va qonun talabi bo'lganda ulashiladi.</p>
 
-<h2>5. Saqlash, muddat va o'chirish</h2>
+<h2>6. Saqlash, muddat va o'chirish</h2>
 <ul>
-<li>Hisob va sessiya ma'lumotlari bizning server bazasida saqlanadi. Saqlash muddati: <span class="todo">[TASDIQLANSIN]</span>.</li>
-<li>Bir martalik kodlar bir necha daqiqadan keyin muddati tugaydi va hash ko'rinishida saqlanadi. Avtomatik o'chirish jadvali: <span class="todo">[TASDIQLANSIN]</span>.</li>
-<li>Smart Memory yozuvlarini ilovadan o'chirish mumkin. Ilova ichida hisobni to'liq o'chirish imkoniyati <span class="todo">[HALI YO'Q]</span>.</li>
+<li>Operatsion server loglari ko'pi bilan 7 kun saqlanadi. <span class="todo">[ISHLAB CHIQARISH SERVERIDA TEKSHIRILSIN — NASHRDAN OLDIN]</span></li>
+<li>Muddati o'tgan bir martalik kodlar va sessiyalar avtomatik o'chiriladi. <span class="todo">[ISHLAB CHIQARISH SERVERIDA TEKSHIRILSIN — NASHRDAN OLDIN]</span></li>
+<li>90 kun davomida ishlatilmagan anonim o'rnatish yozuvlari avtomatik o'chiriladi. <span class="todo">[ISHLAB CHIQARISH SERVERIDA TEKSHIRILSIN — NASHRDAN OLDIN]</span></li>
+<li>Hisob ma'lumotlari (faqat kirsangiz): saqlash muddati <span class="todo">[TASDIQLANSIN]</span>.</li>
+<li>Ilovani o'chirish qurilmangizdagi o'rnatish tokenini o'chiradi.</li>
+<li>Hisobni ilovaning o'zidan o'chirish mumkin: Profil → Hisobni o'chirish. Bu hisobingiz, sessiyalaringiz va telefon raqamingiz yozuvini serverimizdan o'chiradi. <span class="todo">[ISHLAB CHIQARISH SERVERIDA TEKSHIRILSIN — NASHRDAN OLDIN]</span></li>
+<li>Smart Memory yozuvlarini ilovadan o'chirish mumkin.</li>
+<li>Ilovasiz o'chirish: <a href="delete-account.html">delete-account.html</a> sahifasida emailga so'rov yuborish tartibi. <span class="todo">[JARAYON VA MUDDAT — TASDIQLANSIN]</span></li>
 <li>Ma'lumotlarni o'chirish so'rovlari: <a href="mailto:abdurashidabdujamalov13@gmail.com">abdurashidabdujamalov13@gmail.com</a>. <span class="todo">[JARAYON VA MUDDAT — TASDIQLANSIN]</span>.</li>
 </ul>
 
-<h2>6. Xavfsizlik</h2>
+<h2>7. Xavfsizlik</h2>
 <ul>
-<li>Kirish kodlari so'rovlari cheklangan va hash ko'rinishida saqlanadi.</li>
+<li>Kirish kodlari so'rovlari cheklangan va hash ko'rinishida saqlanadi. O'rnatish va sessiya tokenlari serverda faqat xesh ko'rinishida saqlanadi.</li>
 <li>Sessiya tokenlari Android xavfsiz saqlashida (Keystore) turadi.</li>
 <li>Serverga ulanish: <span class="todo">[HTTPS endpoint — nashrdan oldin TASDIQLANSIN]</span>. Hozirgi dev-server ommaga ochiq emas.</li>
 <li>Hech bir tizim to'liq xavfsiz emas; ma'lumotga kirishni cheklashga harakat qilamiz.</li>
 </ul>
 
-<h2>7. Ilova ruxsatlari</h2>
+<h2>8. Ilova ruxsatlari</h2>
 <ul>
 <li><b>Joylashuv</b> (aniq): xarita, navigatsiya, yaqin joylar, radar ogohlantirishlari.</li>
 <li><b>Mikrofon</b>: ovozli buyruqlar.</li>
@@ -77,13 +92,13 @@
 <li><b>Bluetooth va audio sozlamalari</b>: ovoz chiqishi va eshittirish.</li>
 </ul>
 
-<h2>8. Bolalar</h2>
+<h2>9. Bolalar</h2>
 <p><span class="todo">[YOSH CHEKLOVI — TASDIQLANSIN]</span> InWay nashr qiluvchi belgilagan yoshdan kichik bolalar uchun mo'ljallanmagan.</p>
 
-<h2>9. Huquqlaringiz</h2>
-<p>Ruxsatlarni istalgan vaqtda Android sozlamalarida o'chirishingiz, ilovadan foydalanishni to'xtatishingiz va emailga yozib ma'lumotlaringizga kirish, tuzatish yoki o'chirishni so'rashingiz mumkin (5-bo'lim).</p>
+<h2>10. Huquqlaringiz</h2>
+<p>Ruxsatlarni istalgan vaqtda Android sozlamalarida o'chirishingiz, ilovadan foydalanishni to'xtatishingiz va emailga yozib ma'lumotlaringizga kirish, tuzatish yoki o'chirishni so'rashingiz mumkin (6-bo'lim).</p>
 
-<h2>10. O'zgarishlar</h2>
+<h2>11. O'zgarishlar</h2>
 <p>Siyosat o'zgarganda ushbu sahifa va yuqoridagi sana yangilanadi.</p>
 
 <footer>Bu sahifa nashr qiluvchi va yuridik maslahatchi tomonidan tekshirilguncha qoralama hisoblanadi.</footer>
