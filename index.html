@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>InWay Privacy Policy</title>
+<meta name="description" content="How the InWay app collects, uses, stores and deletes your data.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+<nav><a href="index.html">English</a><a href="uz/index.html">O‘zbekcha</a></nav>
+<h1>InWay Privacy Policy</h1>
+<p class="meta">Last updated: 2026-11-15 · Applies to the InWay Android application (package <code>uz.inway.app</code>).</p>
+<p class="note">Draft for review. Items marked <span class="todo">[TO CONFIRM]</span> are not yet verified by the publisher and must be completed before publication.</p>
+
+<h2>1. Who we are</h2>
+<p>InWay is a driver assistant app (navigation, nearby places, speed-camera alerts and voice assistance).</p>
+<ul>
+<li>Publisher / responsible person: ABDURASHID (individual publisher; no company registration is stated).</li>
+<li>Contact email: <a href="mailto:abdurashidabdujamalov13@gmail.com">abdurashidabdujamalov13@gmail.com</a></li>
+<li>Postal address: <span class="todo">[NOT PROVIDED — TO CONFIRM if required by the store]</span></li>
+</ul>
+
+<h2>2. Data we collect and why</h2>
+<table>
+<tr><th>Data</th><th>When</th><th>Purpose</th></tr>
+<tr><td>Phone number</td><td>When you sign in</td><td>Account and one-time sign-in code (SMS). Stored in hashed form.</td></tr>
+<tr><td>Precise location (GPS)</td><td>Only if you grant the permission; used by map, navigation, nearby places and radar alerts</td><td>Route, nearby places, radar warnings. Location is sent to our server to fetch map data.</td></tr>
+<tr><td>Microphone audio</td><td>Only when you press the voice button</td><td>Voice commands. On Android, recognition runs on the device (offline Vosk). On other platforms, the audio may be sent to our server for speech-to-text.</td></tr>
+<tr><td>Chat messages</td><td>When you write to the AI assistant</td><td>To generate replies. Sent to our server and then to OpenAI (see section 4).</td></tr>
+<tr><td>Search queries</td><td>When you search for places or music</td><td>Map and music search, sent through our server to map and video providers.</td></tr>
+<tr><td>Session tokens</td><td>After sign-in</td><td>Keeps you signed in. Stored in the Android secure storage.</td></tr>
+<tr><td>Favorites, history and playlists (music)</td><td>When you save them</td><td>Stored only on your device.</td></tr>
+<tr><td>Smart Memory notes and device ID</td><td>Only if you turn Smart Memory on (off by default)</td><td>Personal notes that the assistant can recall.</td></tr>
+</table>
+<p>We do not use advertising identifiers and do not include third-party analytics or crash-reporting SDKs in the app. We do not collect payment data.</p>
+
+<h2>3. Microphone and voice</h2>
+<p>Voice input is captured only while you press the voice button. On Android, speech recognition for Uzbek runs on your device. Spoken answers are played from pre-recorded clips stored in the app; when a clip is not available, the text is sent to our server to generate speech (see section 4).</p>
+
+<h2>4. Who receives your data (processors)</h2>
+<table>
+<tr><th>Recipient</th><th>What is sent</th></tr>
+<tr><td>InWay server (our own backend)</td><td>Account data, location and search queries, chat text, text for speech generation, and audio on platforms that use server speech-to-text.</td></tr>
+<tr><td>OpenAI</td><td>Chat text needed to generate AI replies. Subject to OpenAI's own data policies <span class="todo">[TO CONFIRM retention settings]</span>.</td></tr>
+<tr><td>OpenStreetMap Nominatim, OSRM route service and Overpass API</td><td>Place search text and coordinates, route waypoints, nearby-place queries. Sent by our server.</td></tr>
+<tr><td>YouTube Data API (Google)</td><td>Music search text. Sent by our server.</td></tr>
+</table>
+<p>We do not sell your personal data. We do not share it for advertising or profiling. Data is shared with the processors above only to provide the features you use, and as required by law.</p>
+
+<h2>5. Storage, retention and deletion</h2>
+<ul>
+<li>Account and session data are stored on our server database. Retention period: <span class="todo">[TO CONFIRM]</span>.</li>
+<li>One-time codes expire after a few minutes; they are stored in hashed form. Automatic deletion schedule: <span class="todo">[TO CONFIRM]</span>.</li>
+<li>Smart Memory items can be deleted from the app. A full account deletion option inside the app is <span class="todo">[NOT AVAILABLE YET]</span>.</li>
+<li>Data deletion requests: email <a href="mailto:abdurashidabdujamalov13@gmail.com">abdurashidabdujamalov13@gmail.com</a>. <span class="todo">[PROCESS AND TIMEFRAME — TO CONFIRM]</span>.</li>
+</ul>
+
+<h2>6. Security</h2>
+<ul>
+<li>Sign-in codes are rate-limited and stored in hashed form.</li>
+<li>Session tokens are kept in Android secure storage (Keystore-backed).</li>
+<li>Connections to our server: <span class="todo">[HTTPS endpoint — TO CONFIRM before publication]</span>. The current development server is not publicly accessible.</li>
+<li>No system is perfectly secure; we work to limit access to data.</li>
+</ul>
+
+<h2>7. Permissions used by the app</h2>
+<ul>
+<li><b>Location</b> (precise): maps, navigation, nearby places, radar alerts.</li>
+<li><b>Microphone</b>: voice commands.</li>
+<li><b>Notifications</b>: driving reminders and alerts.</li>
+<li><b>Foreground service (location)</b>: the driving reminder runs only while you enable it.</li>
+<li><b>Internet and network state</b>: sending requests to our server.</li>
+<li><b>Bluetooth and audio settings</b>: audio output and voice playback.</li>
+</ul>
+
+<h2>8. Children</h2>
+<p><span class="todo">[AGE POLICY — TO CONFIRM]</span> InWay is not directed at children under the age set by the publisher.</p>
+
+<h2>9. Your rights</h2>
+<p>You can withdraw permissions at any time in Android settings, stop using the app, and request access, correction or deletion of your data by email (see section 5).</p>
+
+<h2>10. Changes</h2>
+<p>We will update this page and the date above when the policy changes.</p>
+
+<footer>This page is a draft pending review by the publisher and a legal advisor.</footer>
+</main>
+</body>
+</html>
