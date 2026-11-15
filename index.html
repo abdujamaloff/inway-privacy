@@ -24,50 +24,65 @@
 <li>Postal address: <span class="todo">[NOT PROVIDED — TO CONFIRM if required by the store]</span></li>
 </ul>
 
-<h2>2. Data we collect and why</h2>
+<h2>2. Using InWay without an account</h2>
+<p>You do not need to create an account or give a phone number to use InWay. Maps, GPS, navigation, radar alerts, nearby places and the AI assistant work without signing in.</p>
+<p>Signing in with a phone number is optional. Some features, such as Smart Memory, require an account. The AI assistant is free for now; if we introduce paid AI features in the future, this policy will be updated before they start.</p>
+
+<h2>3. Data we collect and why</h2>
 <table>
 <tr><th>Data</th><th>When</th><th>Purpose</th></tr>
-<tr><td>Phone number</td><td>When you sign in</td><td>Account and one-time sign-in code (SMS). Stored in hashed form.</td></tr>
+<tr><td>Anonymous installation token</td><td>On first use of the app</td><td>A random value created by our server. The server stores only a hash of it. Used to apply the daily AI request limit (20 requests per day) and to protect the service. It is not linked to a phone number unless you sign in.</td></tr>
 <tr><td>Precise location (GPS)</td><td>Only if you grant the permission; used by map, navigation, nearby places and radar alerts</td><td>Route, nearby places, radar warnings. Location is sent to our server to fetch map data.</td></tr>
 <tr><td>Microphone audio</td><td>Only when you press the voice button</td><td>Voice commands. On Android, recognition runs on the device (offline Vosk). On other platforms, the audio may be sent to our server for speech-to-text.</td></tr>
-<tr><td>Chat messages</td><td>When you write to the AI assistant</td><td>To generate replies. Sent to our server and then to OpenAI (see section 4).</td></tr>
-<tr><td>Search queries</td><td>When you search for places or music</td><td>Map and music search, sent through our server to map and video providers.</td></tr>
-<tr><td>Session tokens</td><td>After sign-in</td><td>Keeps you signed in. Stored in the Android secure storage.</td></tr>
+<tr><td>Weather data</td><td>When you open the weather screen or the home weather card</td><td>Current weather and forecast for your location. Your coordinates are sent directly from the phone to Open-Meteo (api.open-meteo.com), not through our server.</td></tr>
+<tr><td>Device heartbeat</td><td>Periodically while the app runs</td><td>A random device identifier, app version and device type, sent to our server to check app status and remote settings.</td></tr>
+<tr><td>Chat messages</td><td>When you write to the AI assistant</td><td>To generate replies. Sent to our server and then to OpenAI (see section 5). Our server does not write the text of messages to its operational logs.</td></tr>
+<tr><td>Search queries</td><td>When you search for places or music</td><td>Map and music search, sent through our server to map and video providers. Our server does not write search text to its operational logs.</td></tr>
+<tr><td>Phone number and sign-in data (optional)</td><td>Only if you choose to sign in</td><td>Account and one-time sign-in code (SMS). The phone number is stored in hashed form.</td></tr>
+<tr><td>Session tokens (optional sign-in)</td><td>After you sign in</td><td>Keeps you signed in. Stored in the Android secure storage.</td></tr>
 <tr><td>Favorites, history and playlists (music)</td><td>When you save them</td><td>Stored only on your device.</td></tr>
-<tr><td>Smart Memory notes and device ID</td><td>Only if you turn Smart Memory on (off by default)</td><td>Personal notes that the assistant can recall.</td></tr>
+<tr><td>Smart Memory notes</td><td>Only if you sign in and turn Smart Memory on (off by default)</td><td>Personal notes that the assistant can recall.</td></tr>
 </table>
 <p>We do not use advertising identifiers and do not include third-party analytics or crash-reporting SDKs in the app. We do not collect payment data.</p>
 
-<h2>3. Microphone and voice</h2>
-<p>Voice input is captured only while you press the voice button. On Android, speech recognition for Uzbek runs on your device. Spoken answers are played from pre-recorded clips stored in the app; when a clip is not available, the text is sent to our server to generate speech (see section 4).</p>
+<h2>4. Microphone and voice</h2>
+<p>Voice input is captured only while you press the voice button. On Android, speech recognition for Uzbek runs on your device. Spoken answers are played from pre-recorded clips stored in the app; when a clip is not available, the text is sent to our server to generate speech (see section 5).</p>
 
-<h2>4. Who receives your data (processors)</h2>
+<h2>5. Who receives your data (processors)</h2>
 <table>
 <tr><th>Recipient</th><th>What is sent</th></tr>
-<tr><td>InWay server (our own backend)</td><td>Account data, location and search queries, chat text, text for speech generation, and audio on platforms that use server speech-to-text.</td></tr>
-<tr><td>OpenAI</td><td>Chat text needed to generate AI replies. Subject to OpenAI's own data policies <span class="todo">[TO CONFIRM retention settings]</span>.</td></tr>
+<tr><td>InWay server (our own backend)</td><td>Anonymous installation token, location and search queries, chat text, text for speech generation, and audio on platforms that use server speech-to-text. Account data only if you sign in.</td></tr>
+<tr><td>OpenAI</td><td>Chat text needed to generate AI replies. Subject to OpenAI's own data policies <span class="todo">[TO CONFIRM retention settings for our API use]</span>.</td></tr>
 <tr><td>OpenStreetMap Nominatim, OSRM route service and Overpass API</td><td>Place search text and coordinates, route waypoints, nearby-place queries. Sent by our server.</td></tr>
+<tr><td>Open-Meteo</td><td>Your coordinates, to get the weather for your location. Sent directly from the phone.</td></tr>
+<tr><td>Central Bank of Uzbekistan (cbu.uz)</td><td>A request for the currency rate page. The request has no personal data, but the site receives your IP address. Sent directly from the phone.</td></tr>
+<tr><td>Google / YouTube</td><td>Video thumbnails and the embedded player for music, loaded directly from YouTube. Your IP address and YouTube's own cookies apply inside the player. <span class="todo">[TO CONFIRM against YouTube terms]</span></td></tr>
 <tr><td>YouTube Data API (Google)</td><td>Music search text. Sent by our server.</td></tr>
 </table>
 <p>We do not sell your personal data. We do not share it for advertising or profiling. Data is shared with the processors above only to provide the features you use, and as required by law.</p>
 
-<h2>5. Storage, retention and deletion</h2>
+<h2>6. Storage, retention and deletion</h2>
 <ul>
-<li>Account and session data are stored on our server database. Retention period: <span class="todo">[TO CONFIRM]</span>.</li>
-<li>One-time codes expire after a few minutes; they are stored in hashed form. Automatic deletion schedule: <span class="todo">[TO CONFIRM]</span>.</li>
-<li>Smart Memory items can be deleted from the app. A full account deletion option inside the app is <span class="todo">[NOT AVAILABLE YET]</span>.</li>
+<li>Operational server logs are kept for at most 7 days. <span class="todo">[VERIFY ON PRODUCTION SERVER BEFORE PUBLICATION]</span></li>
+<li>Expired one-time codes and expired sign-in sessions are removed automatically. <span class="todo">[VERIFY ON PRODUCTION SERVER BEFORE PUBLICATION]</span></li>
+<li>Anonymous installation records that have not been used for 90 days are removed automatically. <span class="todo">[VERIFY ON PRODUCTION SERVER BEFORE PUBLICATION]</span></li>
+<li>Account data (only if you sign in): retention period <span class="todo">[TO CONFIRM]</span>.</li>
+<li>Uninstalling the app removes the installation token from your device.</li>
+<li>You can delete your account in the app: Profile → Delete account. This removes your account, sessions and phone-number record from our server. <span class="todo">[VERIFY ON PRODUCTION SERVER BEFORE PUBLICATION]</span></li>
+<li>Smart Memory items can be deleted from the app.</li>
+<li>Deletion without the app: <a href="delete-account.html">delete-account.html</a> explains how to ask for deletion by email. <span class="todo">[PROCESS AND TIMEFRAME — TO CONFIRM]</span></li>
 <li>Data deletion requests: email <a href="mailto:abdurashidabdujamalov13@gmail.com">abdurashidabdujamalov13@gmail.com</a>. <span class="todo">[PROCESS AND TIMEFRAME — TO CONFIRM]</span>.</li>
 </ul>
 
-<h2>6. Security</h2>
+<h2>7. Security</h2>
 <ul>
-<li>Sign-in codes are rate-limited and stored in hashed form.</li>
+<li>Sign-in codes are rate-limited and stored in hashed form. Installation tokens and session tokens are stored on the server only as hashes.</li>
 <li>Session tokens are kept in Android secure storage (Keystore-backed).</li>
 <li>Connections to our server: <span class="todo">[HTTPS endpoint — TO CONFIRM before publication]</span>. The current development server is not publicly accessible.</li>
 <li>No system is perfectly secure; we work to limit access to data.</li>
 </ul>
 
-<h2>7. Permissions used by the app</h2>
+<h2>8. Permissions used by the app</h2>
 <ul>
 <li><b>Location</b> (precise): maps, navigation, nearby places, radar alerts.</li>
 <li><b>Microphone</b>: voice commands.</li>
@@ -77,13 +92,13 @@
 <li><b>Bluetooth and audio settings</b>: audio output and voice playback.</li>
 </ul>
 
-<h2>8. Children</h2>
+<h2>9. Children</h2>
 <p><span class="todo">[AGE POLICY — TO CONFIRM]</span> InWay is not directed at children under the age set by the publisher.</p>
 
-<h2>9. Your rights</h2>
-<p>You can withdraw permissions at any time in Android settings, stop using the app, and request access, correction or deletion of your data by email (see section 5).</p>
+<h2>10. Your rights</h2>
+<p>You can withdraw permissions at any time in Android settings, stop using the app, and request access, correction or deletion of your data by email (see section 6).</p>
 
-<h2>10. Changes</h2>
+<h2>11. Changes</h2>
 <p>We will update this page and the date above when the policy changes.</p>
 
 <footer>This page is a draft pending review by the publisher and a legal advisor.</footer>
