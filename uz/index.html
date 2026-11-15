@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>InWay Maxfiylik siyosati</title>
+<meta name="description" content="InWay ilovasi ma'lumotlarni qanday yig'ishi, ishlatishi, saqlashi va o'chirishi haqida.">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<main>
+<nav><a href="../index.html">English</a><a href="index.html">O‘zbekcha</a></nav>
+<h1>InWay maxfiylik siyosati</h1>
+<p class="meta">Oxirgi yangilanish: 2026-11-15 · InWay Android ilovasi (paket: <code>uz.inway.app</code>).</p>
+<p class="note">Qoralama. <span class="todo">[TASDIQLANISHI KERAK]</span> belgisi bilan ajratilgan joylar nashrdan oldin to'ldirilishi shart.</p>
+
+<h2>1. Biz kimmiz</h2>
+<p>InWay — haydovchilar uchun yordamchi ilova (navigatsiya, yaqin joylar, radar ogohlantirishlari va ovozli yordam).</p>
+<ul>
+<li>Nashr qiluvchi / mas'ul shaxs: ABDURASHID (yakka tartibdagi nashr qiluvchi; kompaniya ro'yxatdan o'tkazilganligi ko'rsatilmagan).</li>
+<li>Aloqa emaili: <a href="mailto:abdurashidabdujamalov13@gmail.com">abdurashidabdujamalov13@gmail.com</a></li>
+<li>Pochta manzili: <span class="todo">[KIRITILMAGAN — do'kon talab qilsa tasdiqlansin]</span></li>
+</ul>
+
+<h2>2. Qanday ma'lumotlar yig'iladi va nima uchun</h2>
+<table>
+<tr><th>Ma'lumot</th><th>Qachon</th><th>Maqsad</th></tr>
+<tr><td>Telefon raqami</td><td>Kirishda</td><td>Hisob va SMS orqali bir martalik kod. Hash ko'rinishida saqlanadi.</td></tr>
+<tr><td>Aniq joylashuv (GPS)</td><td>Faqat ruxsat berilganda; xarita, navigatsiya, yaqin joylar va radar ogohlantirishlari uchun</td><td>Marshrut, yaqin joylar, radar ogohlantirishi. Xarita ma'lumotini olish uchun serverimizga yuboriladi.</td></tr>
+<tr><td>Mikrofon ovozi</td><td>Faqat ovoz tugmasini bosganingizda</td><td>Ovozli buyruqlar. Androidda tanib olish qurilmada (oflayn Vosk) bajariladi. Boshqa platformalarda audio server orqali matnga aylantirilishi mumkin.</td></tr>
+<tr><td>Chat xabarlari</td><td>AI yordamchiga yozganingizda</td><td>Javob tayyorlash. Serverimiz orqali OpenAI'ga yuboriladi (4-bo'lim).</td></tr>
+<tr><td>Qidiruv so'rovlari</td><td>Joy yoki musiqa qidirganingizda</td><td>Xarita va musiqa qidiruvi. Serverimiz orqali xizmatlarga yuboriladi.</td></tr>
+<tr><td>Sessiya tokenlari</td><td>Kirgandan keyin</td><td>Tizimda qolish. Android xavfsiz saqlashda saqlanadi.</td></tr>
+<tr><td>Sevimlilar, tarix, pleylistlar</td><td>Siz saqlaganingizda</td><td>Faqat qurilmangizda saqlanadi.</td></tr>
+<tr><td>Smart Memory yozuvlari va qurilma ID</td><td>Faqat Smart Memory yoqilganda (standart: o'chiq)</td><td>Shaxsiy eslatmalar, assistent eslab qoladi.</td></tr>
+</table>
+<p>Ilovada reklama identifikatorlari, uchinchi tomon analitikasi yoki xato yig'uvchi SDK yo'q. To'lov ma'lumotlari yig'ilmaydi.</p>
+
+<h2>3. Mikrofon va ovoz</h2>
+<p>Ovoz faqat ovoz tugmasini bosib turganingizda yoziladi. Androidda o'zbekcha tanib olish qurilmangizda bajariladi. Javoblar ilova ichidagi oldindan yozilgan klip orqali eshittiriladi; klip bo'lmasa, matn ovoz yaratish uchun serverimizga yuboriladi (4-bo'lim).</p>
+
+<h2>4. Ma'lumotlarni kim oladi (qayta ishlovchilar)</h2>
+<table>
+<tr><th>Qabul qiluvchi</th><th>Nima yuboriladi</th></tr>
+<tr><td>InWay serveri (bizning backend)</td><td>Hisob ma'lumoti, joylashuv va qidiruv so'rovlari, chat matni, ovoz yaratish uchun matn, server orqali tanib olish ishlatiladigan platformalarda audio.</td></tr>
+<tr><td>OpenAI</td><td>AI javobi uchun chat matni. OpenAI'ning o'z ma'lumot siyosati amal qiladi <span class="todo">[saqlash sozlamalari — TASDIQLANSIN]</span>.</td></tr>
+<tr><td>OpenStreetMap Nominatim, OSRM marshrut xizmati va Overpass API</td><td>Joy qidiruvi matni va koordinatalar, marshrut nuqtalari, yaqin joy so'rovlari. Server yuboradi.</td></tr>
+<tr><td>YouTube Data API (Google)</td><td>Musiqa qidiruvi matni. Server yuboradi.</td></tr>
+</table>
+<p>Ma'lumotlarimizni sotmaymiz va reklama yoki profil tuzish uchun ulashmaymiz. Yuqoridagi qayta ishlovchilar bilan ma'lumot faqat siz ishlatayotgan funksiyalarni ta'minlash uchun va qonun talabi bo'lganda ulashiladi.</p>
+
+<h2>5. Saqlash, muddat va o'chirish</h2>
+<ul>
+<li>Hisob va sessiya ma'lumotlari bizning server bazasida saqlanadi. Saqlash muddati: <span class="todo">[TASDIQLANSIN]</span>.</li>
+<li>Bir martalik kodlar bir necha daqiqadan keyin muddati tugaydi va hash ko'rinishida saqlanadi. Avtomatik o'chirish jadvali: <span class="todo">[TASDIQLANSIN]</span>.</li>
+<li>Smart Memory yozuvlarini ilovadan o'chirish mumkin. Ilova ichida hisobni to'liq o'chirish imkoniyati <span class="todo">[HALI YO'Q]</span>.</li>
+<li>Ma'lumotlarni o'chirish so'rovlari: <a href="mailto:abdurashidabdujamalov13@gmail.com">abdurashidabdujamalov13@gmail.com</a>. <span class="todo">[JARAYON VA MUDDAT — TASDIQLANSIN]</span>.</li>
+</ul>
+
+<h2>6. Xavfsizlik</h2>
+<ul>
+<li>Kirish kodlari so'rovlari cheklangan va hash ko'rinishida saqlanadi.</li>
+<li>Sessiya tokenlari Android xavfsiz saqlashida (Keystore) turadi.</li>
+<li>Serverga ulanish: <span class="todo">[HTTPS endpoint — nashrdan oldin TASDIQLANSIN]</span>. Hozirgi dev-server ommaga ochiq emas.</li>
+<li>Hech bir tizim to'liq xavfsiz emas; ma'lumotga kirishni cheklashga harakat qilamiz.</li>
+</ul>
+
+<h2>7. Ilova ruxsatlari</h2>
+<ul>
+<li><b>Joylashuv</b> (aniq): xarita, navigatsiya, yaqin joylar, radar ogohlantirishlari.</li>
+<li><b>Mikrofon</b>: ovozli buyruqlar.</li>
+<li><b>Bildirishnomalar</b>: haydash eslatmalari va ogohlantirishlar.</li>
+<li><b>Foreground service (joylashuv)</b>: haydash eslatmasi faqat siz yoqqaningizda ishlaydi.</li>
+<li><b>Internet va tarmoq holati</b>: serverimizga so'rov yuborish.</li>
+<li><b>Bluetooth va audio sozlamalari</b>: ovoz chiqishi va eshittirish.</li>
+</ul>
+
+<h2>8. Bolalar</h2>
+<p><span class="todo">[YOSH CHEKLOVI — TASDIQLANSIN]</span> InWay nashr qiluvchi belgilagan yoshdan kichik bolalar uchun mo'ljallanmagan.</p>
+
+<h2>9. Huquqlaringiz</h2>
+<p>Ruxsatlarni istalgan vaqtda Android sozlamalarida o'chirishingiz, ilovadan foydalanishni to'xtatishingiz va emailga yozib ma'lumotlaringizga kirish, tuzatish yoki o'chirishni so'rashingiz mumkin (5-bo'lim).</p>
+
+<h2>10. O'zgarishlar</h2>
+<p>Siyosat o'zgarganda ushbu sahifa va yuqoridagi sana yangilanadi.</p>
+
+<footer>Bu sahifa nashr qiluvchi va yuridik maslahatchi tomonidan tekshirilguncha qoralama hisoblanadi.</footer>
+</main>
+</body>
+</html>
